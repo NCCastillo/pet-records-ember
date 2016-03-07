@@ -1,0 +1,26 @@
+<h1>Adding New Pet</h1>
+<form {{action "save" newPet on="submit"}}>
+  <p>
+    <label>Pet Name
+      {{input value=newPet.name}}
+    </label>
+  </p>
+  <p>
+    <label>Owner Name:
+      {{input value=newPet.owner}}
+    </label>
+  </p>
+  <p>
+    <label>Breed:
+      {{input value=newPet.breed}}
+    </label>
+  </p>
+  <p>
+    <label>Age:
+      {{input value=newPet.age}}
+    </label>
+  </p>
+  <input type="submit" value="Save"/>
+  <button {{action "cancel"}}>Cancel</button>
+</form>
+
