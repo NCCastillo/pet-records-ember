@@ -1,5 +1,8 @@
-<h2 id="title">Welcome to Ember</h2>
+{{nav-bar}}
 
-{{outlet}}
+<div class="main container-fluid">
+  {{#link-to "pets"}}Go to pets{{/link-to}}
+  {{outlet}}
+</div>
 
-{{#link-to "pets"}}Go to pets{{/link-to}}
+
