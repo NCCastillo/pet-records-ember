@@ -18,5 +18,9 @@ export default Ember.Route.extend({
 
       pet.save();
     }
+  cancel() {
+    // need to fix this. Cancel action does not get to here from component.
+    console.log("inside route for cancel");
+    this.transitionTo('pets');
   }
 });

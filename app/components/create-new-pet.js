@@ -10,8 +10,8 @@ export default Ember.Component.extend({
       this.set('newPet.age', null);
     },
     cancel() {
-      console.log("Cancelling");
-      return true;
+      console.log("Cancelling from Component");
+      this.sendAction('cancel');
     }
   }
 });
