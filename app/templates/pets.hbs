@@ -1,24 +1,38 @@
-<h1>Pets</h1>
-{{outlet}}
+<h1>My Pets</h1>
+
 <div class="row">
-  {{#each content as |pet| }}
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <div class="caption">
-          <h3>{{pet.name}}</h3>
-          <p>Owner: {{pet.owner}}</p>
-          <p>Breed: {{pet.breed}}</p>
-          <p>Age: {{pet.age}}</p>
-          <p>
-            <a href="#" class="btn btn-primary" role="button">Edit</a>
-            <a href="#" class="btn btn-danger" role="button">Delete</a>
-          </p>
+  <div class="col-md-3">
+    {{#each content as |pet| }}
+      {{#link-to "pets.pet" pet.id}}
+        <div class="well well-sm">
+          <div class="row">
+            <div class="col-xs-1 col-sm-2">
+              <span class="glyphicon  glyphicon-star" aria-hidden="true"></span>
+            </div>
+            <div class="col-xs-4 col-sm-10">
+              {{pet.name}}
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  {{/each}}
+        {{/link-to}}
+    {{/each}}
+  </div>
+  <div class="col-md-9">
+    {{outlet}}
+  </div>
 </div>
 
-{{#link-to "index"}}Back{{/link-to}}
+
+<div class="row">
+  <div class="col-md-3">
+      {{#link-to "pets.new" class="btn btn-success btn-default"}}Add Pet{{/link-to}}
+  </div>
+</div>
+<br/>
+<div class="row">
+  <div class="col-md-3">
+    {{#link-to "index" class="btn btn-default btn-default"}}Back{{/link-to}}
+  </div>
+</div>
 
 
