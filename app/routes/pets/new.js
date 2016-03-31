@@ -16,8 +16,14 @@ export default Ember.Route.extend({
         age: model.age
       });
 
-      pet.save();
+      pet.save().then(() => {
+        this.transitionTo('pets.pet', pet);
+      }, () => {
+        console.log("opps something went wrong");
+      });
     }
+  },
+
   cancel() {
     // need to fix this. Cancel action does not get to here from component.
     console.log("inside route for cancel");
