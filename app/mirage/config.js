@@ -18,4 +18,16 @@ export default function() {
       ))
     };
   });
+
+  this.get('/pets/:pet_id', function (db, request){
+    let pet_id = request.params.pet_id;
+
+    return {
+      data: {
+        type: 'pets',
+        id: pet_id,
+        attributes: db.pets.find(pet_id)
+      }
+    };
+  });
 }
