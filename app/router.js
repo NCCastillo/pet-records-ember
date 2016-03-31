@@ -8,6 +8,7 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.route('pets', function() {
     this.route('new');
+    this.route('pet', { path: ':pet_id'}); //change this to slug
   });
 });
 
